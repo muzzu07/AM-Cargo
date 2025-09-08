@@ -34,7 +34,6 @@ const Services = () => {
     { title: "Door-to-Door Delivery", icon: Package },
     { title: "Express Transportation", icon: Clock },
     { title: "Long Distance Routes", icon: MapPin },
-    { title: "24/7 Support", icon: Clock },
     { title: "Load Tracking", icon: Truck }
   ];
 
@@ -122,17 +121,19 @@ const Services = () => {
               Value-added services to enhance your transportation experience
             </p>
           </div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
-            {additionalServices.map((service, index) => (
-              <Card key={index} className="text-center shadow-card hover:shadow-hero transition-all duration-500 bg-gradient-card border-0 animate-fade-in hover:scale-105 group" style={{animationDelay: `${index * 100}ms`}}>
-                <CardContent className="p-6">
-                  <service.icon className="h-12 w-12 text-primary mx-auto mb-4 group-hover:animate-float" />
-                  <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="flex items-center justify-center">
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {additionalServices.map((service, index) => (
+                <Card key={index} className="items-center text-center shadow-card hover:shadow-hero transition-all duration-500 bg-gradient-card border-0 animate-fade-in hover:scale-105 group" style={{animationDelay: `${index * 100}ms`}}>
+                  <CardContent className="p-6 flex flex-col items-center">
+                    <service.icon className="h-12 w-12 text-primary mx-auto mb-4 group-hover:animate-float" />
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
